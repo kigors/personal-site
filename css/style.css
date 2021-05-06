@@ -16,11 +16,15 @@ header {
     padding: 30px;
     text-align: center;
     background-image: url("../images/36801346-free-background-images.jpg");
-    background-size: 100%;
+    background-size: 100% 100%;
+    /* background-attachment: fixed;
+    background-size: cover; */
     color: white;
 }
 header > p {
     font-size: 50px;
+    -webkit-text-stroke: 1px rgb(68, 68, 68);
+    font-weight: bold;
     /*font-family: 'Krub';*/
 }
 footer{
