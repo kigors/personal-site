@@ -240,7 +240,7 @@ article:nth-of-type(even){
   }
   .sidepict img {
     max-width: 80%;
-    style="border:5px solid black"
+    /* border: 5px solid black; */
   }
   
   .content{
