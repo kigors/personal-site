@@ -24,14 +24,11 @@ header > p {
     /*font-family: 'Krub';*/
 }
 footer{
-    /* border: 1px solid tomato; */
-    /* background-color: #ddd; */
-    /* box-shadow: 2px 2px 4px crimson; */
     padding: 15px;
     text-align: center;
     margin-top: 30px;
     width: 100%;
-    bottom: 0;
+    /* bottom: 0; */
 }
 .footer_elem {
     display: inline;
@@ -54,10 +51,6 @@ h3, h4, h5, h6 {
 h4 {
     font-size: 115%;
 }
-/*#page-container {
-    position: relative;
-    min-height: 100vh;
-}*/
 
 /*scroll bars restyle*/
 /* width */
@@ -125,12 +118,13 @@ h4 {
     border-radius: 10px 10px 0px 0px;
 }
 
-/* body elements */
+/* main page body elements */
 .card_row {
     margin: auto;
     justify-content: center;
     width: 90%;
     display: flex;
+    flex-wrap: wrap;
 }
 .card_row::after {
     content: "";
@@ -138,7 +132,7 @@ h4 {
     display: table;
 }
 .card {
-    float: left;
+    /* float: left; */
     background-color: white;
     border: 1px solid grey;
     box-shadow: 3px 3px 3px rgba(150, 150, 150, 0.5);
@@ -162,7 +156,7 @@ a.card {
     box-shadow: 5px 5px 5px rgba(150, 150, 150, 0.5);
 }
 
-/*content styles*/
+/*subpages content styles*/
 article {
     padding: 0 5px;
     box-sizing: border-box;
