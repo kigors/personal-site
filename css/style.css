@@ -24,17 +24,28 @@ header > p {
     /*font-family: 'Krub';*/
 }
 footer{
-    border: 1px solid tomato;
-    background-color: orangered;
-    box-shadow: 2px 2px 4px crimson;
+    /* border: 1px solid tomato; */
+    /* background-color: #ddd; */
+    /* box-shadow: 2px 2px 4px crimson; */
     padding: 15px;
     text-align: center;
     margin-top: 30px;
     width: 100%;
-    /*position: absolute;*/
     bottom: 0;
-    /*justify-items: center;*/
 }
+.footer_elem {
+    display: inline;
+    padding: 15px;
+    text-decoration: none;
+    font-size: 90%;
+    color: black;
+}
+.footer_elem img {
+    vertical-align: middle;
+    width: 25px;
+}
+
+
 h3, h4, h5, h6 {
     font-family: 'Amethysta', Garamond, Georgia, Serif;
     font-size: 25px;

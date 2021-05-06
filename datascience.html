@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kuchin's website: Programming projects</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href='https://fonts.googleapis.com/css?family=Amethysta|Krub|Roboto|Lora'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+</head>
+<body>
+<header>
+    <p>Data Science and ML projects</p>
+    <div class="nav-list">
+        <div class="dropdown">
+            <div class="dropbtn"><a href="index.html">Home </a><i class="fa fa-caret-down"></i></div>
+            <div class="dropdown-content">
+                <a href="coding.html">Programming</a>
+                <a href="school_math.html">School math</a>
+                <a href="hobby.html">Music hobby</a>
+            </div>
+            </div>              
+    </div>
+</header>
+<article>
+    <div class="side_content">
+        <img src="images/emotion_detection.png" alt="tensorflow icon">
+    </div>
+    <div class="main_content">
+        <h3>Emotion detection project</h3>
+        <p>#python #tensorflow #cnn #tranfer-learning #BiT #inception #valence-arousal</p>
+        <h4>Description:</h4>
+        <p>I analyzed different training strategies of convolutional neural networks (CNN) for emotion 
+        detection based on images (face photos). I experimented with <i>Inception V3</i> and <i>BiT-M r50x1</i> pre-trained 
+        networks (trained on ImageNet), compared fine-tuning and feature extraction means of transfer learning.</p>
+        <p>I trained models on images provided by <a href="https://www.kaggle.com/c/skillbox-computer-vision-project/data">Kaggle competition</a>
+        experimenting with original images and images of faces cropped by openCV face detector.</p>
+        <p>Final experiment is dedicated to valence-arousal representation of emotions. Using same dataset I trained models 
+        (regressor and regressor+classifier) to predict valence and arousal of emotion on the image.</p>
+        <p>More information and demo script for web camera are available on 
+            <a href="https://github.com/kigors/emotion_detection_experiments">GitHub repository</a>.</p>
+    </div>
+</article>
+
+<article>
+    <div class="side_content">
+        <img src="images/tensorflow-logo.png" alt="tensorflow icon">
+    </div>
+    <div class="main_content">
+        <h3>Chatbot on RNN</h3>
+        <p>#python #tensorflow #rnn #attention #chatbot</p>
+        <h4>Description:</h4>
+        In attached notebook I experimented with several RNN (recurrent neural net) designs to create a simple chat-bot 
+        trained on <a href="https://www.cs.cornell.edu/~cristian/Cornell_Movie-Dialogs_Corpus.html">Cornell Movie-Dialogs Corpus</a>. <br>
+        3 different approached where tested:
+        <ol>
+            <li>char-RNN with encoder/decoder: predicting a phrase symbol-by-symbol</li>
+            <li>encoder/decoder RNN on tokens: predicting a phrase by words</li>
+            <li>encoder/decoder RNN with attention: implementation of attention mechanism for chat bot</li>
+        </ol>
+        <p>I studied dependence of model parameters selection (number of LSTM layers, units, embedding size, sequence length, etc.) 
+        on predicting subjective quality trying to maximize model complexity running on a signle GPU.</p>
+        <img src="images/chatbot.png" alt="chat-bot design" width="700px">
+        <p>Study is available on <a href="https://colab.research.google.com/drive/1GcY5AmM0yUmh-QmbhuAn-C0yJ7yez8xo#scrollTo=CFSUdRD3MIQE">Colab</a>.</p>
+        <p>The following github repository is dedicated to deployment of the third model with tensorflow-model-serving: <br>
+        <a href="https://github.com/kigors/tf-serving-chatbot-attention">https://github.com/kigors/tf-serving-chatbot-attention</a></p>
+    </div>
+</article>
+
+<article>
+    <div class="side_content">
+        <img src="images/tensorflow-logo.png" alt="tensorflow icon">
+    </div>
+    <div class="main_content">
+        <h3>Deep learning face classifier/regressor</h3>
+        <p>#Python, #Tensorflow 2.3, #Keras, #face_model, #transfer_learning</p>
+        
+            <h4>Description:</h4>
+            Model is based on trained VGGFace model using transfer learning technique by adding and retraining 
+            2 extra fully connected layers with 3 outputs for:<br>
+            <ul>
+                <li>gender prediction (binary classifier)</li>
+                <li>race prediction (categorical classifier)</li>
+                <li>age prediction (regression)</li>
+            </ul>
+            All 3 outputs are trained simultaneously. The latest accuracies were 94% for gender, 86% race and 
+            0.08 mae (on 0-1 scaled age).
+        
+        <img src="images/face_model.png" width="700px">
+        <a href="https://colab.research.google.com/drive/1xeS6yyfuzLdeGRgcJkaaeZ-_c9hh_UAx?usp=sharing">Colab notebook</a>
+    </div>
+</article>
+
+<article>
+    <div class="side_content">
+        <img src="images/1024px-Python.svg.png" alt="python icon">
+    </div>
+    <div class="main_content" lang="ru">
+        <h3>Course projects: Data Science</h3>
+        <p>performed as part of education at <a href="https://skillbox.ru/">Skillbox</a></p>
+        <section>
+            <h4><a href="https://drive.google.com/file/d/1V7wnFcxs-PFpis01xm3LCosUQUPqbX2Z/view?usp=sharing">Курсовой проект №1</a></h4>
+            <strong>Описание работы:</strong>
+            <p>Перед вами стоит бизнес-задача – на основании имеющихся данных подготовить аналитический отчет, 
+                который в дальнейшем поможет продюсерам образовательных программ эффективно выстраивать 
+                стратегию по модернизированию и улучшению курсов. В начале отчета предлагается оформить емкий 
+                описательный блок по каждому курсу на основании рассчитанных показателей. Далее предлагается 
+                посчитать потенциальную нагрузку на преподавателей, чтобы оценить необходимость расширения 
+                штата сотрудников. Затем идет блок из двух пунктов по анализу качества контента курсов, где 
+                еобходимо выявить проблемные модули, которые, возможно, требуют доработки. Также стоит задача 
+                выявить потенциальную сезонность. Наконец, предложено задание для самостоятельной разработки метрики 
+                успеваемости студентов для нахождения тех, кто значительно хуже справляются с прохождением курса. 
+                Каждый из пунктов анализа предполагается сопроводить аналитическим выводом на основании рассчитанных 
+                метрик.</p>
+        </section>
+        <section>
+            <h4><a href="https://drive.google.com/file/d/1xh9p0yBw8EDNxGtjDmMdQ8venLsA4T32/view?usp=sharing">Курсовой проект №2</a></h4>
+            <b>Часть 1</b>
+            <p>Перед вами стоит задача – подготовить аналитический отчет для HR-отдела. На основании проведенной 
+                аналитики предполагается составить рекомендации для отдела кадров по стратегии набора персонала, 
+                а также по взаимодействию с уже имеющимися сотрудниками.</p>
+            <p>В базе данных лежит набор таблиц, которые содержат данные о сотрудниках вымышленной компании. 
+                Сделайте обзор штата сотрудников компании. Составьте набор предметов исследования, а затем 
+                проверьте их на данных. Вся аналитика должна быть выполена с помощью SQL. Впоследствии данные 
+                можно визуализировать, однако финальные датафреймы для графиков также должны быть подготовлены с 
+                помощью SQL.</p>
+
+            <b>Часть 2</b>
+            <p>Перед вами стоит задача – подготовить аналитический ответ для SMM-отдела компании Skillbox.<br>
+            Объектом анализа является паблик <a href="https://vk.com/skillbox_education">Skillbox Вконтакте</a>.</p>
+            <p>Подключитесь к API VK и выгрузите посты со стены паблика Skillbox за интересующий период 
+                (определите самостоятельно и обоснуйте). Проанализируйте влияние различных факторов (например, 
+                времени публикации) на вовлеченность пользователей (количество лайков, комментариев, голосов в 
+                опросах). Сделайте аналитику по рубрикам (примеры рубрик: дизайн-битва, игра по управлению), 
+                которые есть в паблике. Выбрать нужные посты можно с помощью регулярных выражений. Составьте 
+                перечень рекомандаций для SMM-отдела по итогам анализа.</p>
+        </section>
+        <section>
+            <h4><a href="https://drive.google.com/file/d/1r6MAnaupLh3_Kbt5OIQXrrpo1VKsJgcV/view?usp=sharing">Курсовой проект №3</a></h4>
+            <b>Описание работы:</b>
+            <p>Любой бизнес хочет максимизировать количество клиентов. Для достижения этой цели важно не только 
+                пытаться привлечь новых, но и удерживать уже существующих. Удержать клиента обойдется компании 
+                дешевле, чем привлечь нового. Кроме того, новый клиент может оказаться слабо заинтересованным 
+                в услугах бизнеса и с ним будет сложно работать, тогда как о старых клиентах уже есть необходимые 
+                данные по взаимодействию с сервисом.</p>
+            <p>Соответственно, прогнозируя отток, мы можем вовремя среагировать и попытаться удержать клиента, 
+                который хочет уйти. Опираясь на данные об услугах, которыми пользуется клиент, мы можем сделать 
+                ему специальное предложение, пытаясь изменить его решение об уходе от оператора. Благодаря этому 
+                задача удержания будет легче в реализации, чем задача привлечения новых пользователей, о которых 
+                мы еще ничего не знаем.</p>
+            <p>Вам предоставлен набор данных от телекоммуникационной компании. В данных содержится информация о 
+                почти шести тысячах пользователей, их демографических характеристиках, услугах, которыми они 
+                пользуются, длительности пользования услугами оператора, методе оплаты, размере оплаты.</p>
+            <p>Cтоит задача проанализировать данные и спрогнозировать отток пользователей (выявить людей, которые 
+                продлят контракт и которые не продлят).</p>
+        </section>
+    </div>
+</article>
+
+<footer>
+    <hr>
+    <a href="https://telegram.me/kigors" target="_blank" class="footer_elem">
+        <span>
+            <img src="media/telegram.svg" alt="telegram-icon">
+            Telegram
+        </span> 
+    </a>
+    <a href="https://m.me/ikuchin" target="_blank" class="footer_elem">
+        <span>
+            <img src="media/fb_messenger_icon.png" alt="fb-messenger-icon">
+            Messenger
+        </span>
+    </a>
+    <a href="https://github.com/kigors" target="_blank" class="footer_elem">
+        <span>
+            <img src="media/GitHub-Mark-32px.png" alt="github-icon">
+            Github
+        </span>
+    </a>
+</footer>
+</body>
+</html>
