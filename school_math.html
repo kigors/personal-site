@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kuchin's website: School math scripts</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href='https://fonts.googleapis.com/css?family=Amethysta|Krub'>
+    <style type="text/css">
+        .s0 { color: #808080;}
+        .s1 { color: #080808;}
+        .s2 { color: #0033b3;}
+        .s3 { color: #1750eb;}
+        .s4 { color: #436b2b;}
+        pre {
+          font-family: Consolas,"courier new";
+          padding: 2px;
+          font-size: 90%;
+          border-left: 3px solid #6b6b6b;
+          padding-left: 5px;
+          overflow-x: auto;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+</head>
+<body>
+    <header>
+        <p>School math scripts</p>
+        <i>enjoying to check kid's homework</i>
+        <div class="nav-list">
+            <div class="dropdown">
+                <div class="dropbtn"><a href="index.html">Home </a><i class="fa fa-caret-down"></i></div>
+                <div class="dropdown-content">
+                  <a href="coding.html">Programming</a>
+                  <a href="school_math.html">School math</a>
+                  <a href="hobby.html">Music hobby</a>
+                </div>
+              </div>              
+        </div>
+    </header>
+
+    <article>
+        <div class="side_content">
+            <img src="images/gcf.jpg" alt="python icon">
+        </div>
+        <div class="main_content">
+            <h3>Greatest Common Factor (GCF) and Least common Multiple (LCM) script</h3>
+            <p>Output is a dictionary with prime numbers as keys and their exponents as values.</p>
+<pre>
+<span class="s0"># import devisors() function from the previous post</span>
+
+
+<span class="s2">from </span><span class="s1">collections </span><span class="s2">import </span><span class="s1">Counter</span>
+
+
+<span class="s2">def </span><span class="s1">greatest_common_factor(n1</span><span class="s2">, </span><span class="s1">n2):</span>
+    <span class="s1">counter1 = devisors(n1)</span>
+    <span class="s1">counter2 = devisors(n2)</span>
+    <span class="s1">result = Counter()</span>
+    <span class="s2">for </span><span class="s1">prime </span><span class="s2">in </span><span class="s1">counter1.keys():</span>
+        <span class="s1">power = min(counter1[prime]</span><span class="s2">, </span><span class="s1">counter2[prime])</span>
+        <span class="s2">if </span><span class="s1">power &gt; </span><span class="s3">0</span><span class="s1">:</span>
+            <span class="s1">result[prime] = power</span>
+    <span class="s2">if </span><span class="s1">len(result) == </span><span class="s3">0</span><span class="s1">:</span>
+        <span class="s1">result[</span><span class="s3">1</span><span class="s1">] = </span><span class="s3">1</span>
+    <span class="s2">return </span><span class="s1">result</span>
+
+
+<span class="s2">def </span><span class="s1">least_common_multiple(n1</span><span class="s2">, </span><span class="s1">n2):</span>
+    <span class="s1">counter1 = devisors(n1)</span>
+    <span class="s1">counter2 = devisors(n2)</span>
+    <span class="s2">for </span><span class="s1">prime </span><span class="s2">in </span><span class="s1">counter2.keys():</span>
+        <span class="s1">counter1[prime] = max(counter1[prime]</span><span class="s2">, </span><span class="s1">counter2[prime])</span>
+
+    <span class="s2">return </span><span class="s1">counter1</span>
+
+
+<span class="s2">def </span><span class="s1">get_product(counter):</span>
+    <span class="s2">if </span><span class="s1">len(counter) == </span><span class="s3">0</span><span class="s1">:</span>
+        <span class="s2">return </span><span class="s3">0</span>
+    <span class="s1">prod = </span><span class="s3">1</span>
+    <span class="s2">for </span><span class="s1">prime</span><span class="s2">, </span><span class="s1">power </span><span class="s2">in </span><span class="s1">counter.items():</span>
+        <span class="s1">prod *= prime ** power</span>
+    <span class="s2">return </span><span class="s1">prod</span>
+
+
+<span class="s1">get_product(greatest_common_factor(</span><span class="s3">18</span><span class="s2">, </span><span class="s3">24</span><span class="s1">))</span>
+<span class="s1">get_product(least_common_multiple(</span><span class="s3">18</span><span class="s2">, </span><span class="s3">24</span><span class="s1">))</span>
+</pre>
+        </div>
+    </article>
+
+    <article>
+        <div class="side_content">
+            <img src="images/prime_tree.png" alt="devisors">
+        </div>
+        <div class="main_content">
+            <h3>Prime factors script</h3>
+            <p>#prime_devisors, #recursion</p>
+            <pre>
+<span class="s2">import </span><span class="s1">math</span>
+<span class="s2">from </span><span class="s1">collections </span><span class="s2">import </span><span class="s1">Counter</span>
+
+
+<span class="s2">def </span><span class="s1">devisors(n</span><span class="s2">, </span><span class="s1">counter=</span><span class="s2">None</span><span class="s1">):</span>
+    <span class="s2">if </span><span class="s1">counter == </span><span class="s2">None</span><span class="s1">:</span>
+        <span class="s1">counter = Counter()</span>
+    <span class="s2">if </span><span class="s1">n == </span><span class="s3">1</span><span class="s1">:</span>
+        <span class="s2">return </span><span class="s1">counter</span>
+
+    <span class="s1">prime = </span><span class="s2">True</span>
+
+    <span class="s2">for </span><span class="s1">i </span><span class="s2">in </span><span class="s1">range(</span><span class="s3">2</span><span class="s2">, </span><span class="s1">math.floor(math.sqrt(n)) + </span><span class="s3">1</span><span class="s1">):</span>
+        <span class="s2">if </span><span class="s1">n % i == </span><span class="s3">0</span><span class="s1">:</span>
+            <span class="s1">counter[i] += </span><span class="s3">1</span>
+            <span class="s1">n = n // i</span>
+            <span class="s1">prime = </span><span class="s2">False</span>
+            <span class="s1">devisors(n</span><span class="s2">, </span><span class="s1">counter)</span>
+            <span class="s2">break</span>
+
+    <span class="s2">if </span><span class="s1">prime:</span>
+        <span class="s1">counter[n] += </span><span class="s3">1</span>
+
+    <span class="s2">return </span><span class="s1">counter</span>
+
+
+<span class="s2">def </span><span class="s1">print_counter(counter):</span>
+    <span class="s1">output = []</span>
+    <span class="s2">for </span><span class="s1">key</span><span class="s2">, </span><span class="s1">value </span><span class="s2">in </span><span class="s1">counter.items():</span>
+        <span class="s1">s = </span><span class="s4">f'</span><span class="s2">{</span><span class="s1">key</span><span class="s2">}</span><span class="s4">' </span><span class="s2">if </span><span class="s1">value == </span><span class="s3">1 </span><span class="s2">else </span><span class="s4">f'</span><span class="s2">{</span><span class="s1">key</span><span class="s2">}</span><span class="s4">^</span><span class="s2">{</span><span class="s1">value</span><span class="s2">}</span><span class="s4">'</span>
+        <span class="s1">output.append(s)</span>
+    <span class="s1">print(</span><span class="s4">' * '</span><span class="s1">.join(output))</span>
+
+
+<span class="s1">print_counter(devisors(</span><span class="s3">800</span><span class="s1">))</span></pre>            
+        </div>
+    </article>
+    <article>
+        <div class="side_content">
+            <img src="images/prime-numbers-5319713_960_720.jpg" alt="prime numbers">
+        </div>
+        <div class="main_content">
+            <h3>Is it a prime number?</h3>
+            <p>naive algorithm</p>
+            <pre>
+<span class="s2">import </span><span class="s1">math</span>
+
+
+<span class="s2">def </span><span class="s1">is_prime(n):</span>
+    <span class="s2">if </span><span class="s1">n == </span><span class="s3">1 </span><span class="s2">or </span><span class="s1">n == </span><span class="s3">2</span><span class="s1">:</span>
+        <span class="s2">return True</span>
+    <span class="s2">for </span><span class="s1">i </span><span class="s2">in </span><span class="s1">range(</span><span class="s3">2</span><span class="s1">, math.floor(math.sqrt(n))+</span><span class="s3">1</span><span class="s1">):</span>
+        <span class="s2">if </span><span class="s1">n % i == </span><span class="s3">0</span><span class="s1">:</span>
+            <span class="s2">return False</span>
+    <span class="s2">return True</span></pre>
+        </div>
+    </article>
+
+<footer>Здесь будет футер</footer>
+</body>
+</html>

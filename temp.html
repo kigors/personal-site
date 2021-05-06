@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style>
+.container {
+  display: grid;
+  margin: 0 auto;
+  grid-template-rows: auto;
+  grid-template-areas: "content";
+}
+.content{
+font-family: Sans-serif;
+font-size: 17px;
+padding: 15px;
+justify-self: stretch;
+}
+img{
+max-width: 100%;
+min-width: 300px;
+min-height: 181px;
+display: flex; /* remove extra space below image */
+}
+</style>
+</head>
+<body>
+<div class="container">
+        <div class="content">
+            <h4>Description:</h4>
+            Model is based on trained VGGFace model using transfer learning technique by adding and retraining 2 extra fully connected layers with 3 outputs for:<br>
+            <ul>
+                <li>gender prediction (binary classifier)</li>
+                <li>race prediction (categorical classifier)</li>
+                <li>age prediction (regression)</li>
+            </ul>
+            All 3 outputs are trained simultaneously. The latest accuracies were 94% for gender, 86% race and 0.08 mae (on 0-1 scaled age).
+        </div>
+        <div class="content" style="min-height: 400px;">
+            <img src="https://lh3.googleusercontent.com/pw/ACtC-3dzmSMqd6bTTuYp-OIcbaOsp1gdKLT9BrCDpYwrdesIhZ_hvDKF-50u-CrOO8NM_Gse7L_pVY2Bp797INkF-Zk_yp8v7MMv_WT8pLB74CkWA5Ndqocyfvho-_TZmhS55DFsT8fdT2ywf8311KDh7MgV=w598-h362-no?authuser=0"><br>
+            <a href="https://colab.research.google.com/drive/1xeS6yyfuzLdeGRgcJkaaeZ-_c9hh_UAx?usp=sharing">Colab notebook</a>
+        </div>
+</div>
+</body>
+</html>
