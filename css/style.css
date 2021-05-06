@@ -23,7 +23,8 @@ header {
 }
 header > p {
     font-size: 50px;
-    -webkit-text-stroke: 1px rgb(68, 68, 68);
+    /* -webkit-text-stroke: 1px #444444; */
+    text-shadow: -1px 0 #444444, 0 1px #444444, 1px 0 #444444, 0 -1px #444444;
     font-weight: bold;
     /*font-family: 'Krub';*/
 }
